@@ -1,0 +1,44 @@
+
+
+
+
+<div class="container-fluid">
+   <br>
+   <div class="d-flex justify-content-between">
+    <mat-form-field appearance="outline">
+        <mat-label>Enter country</mat-label>
+        <input matInput placeholder="Search by Country Name" [(ngModel)]="searchBoxTxt" >
+       
+      </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Select me</mat-label>
+        <mat-select [(ngModel)]="filterText" (selectionChange)="countryRegion($event)" >
+          <mat-option *ngFor="let o of options" value={{o.region}} >{{o.region}}</mat-option>
+        </mat-select>
+       
+      </mat-form-field>
+   </div>
+    
+
+       
+      <div class="row gy-4">
+            <div class="col-lg-4 col-md-6" *ngFor="let item of countryList | searchBox:searchBoxTxt" appearance="outlined" (click)="countryCode(item.numericCode)">
+            <mat-card class="example-card" >
+              
+              <img mat-card-image src={{item.flag}} alt="Photo of a Shiba Inu" height="200px">
+              <mat-card-header>
+                  <mat-card-title>{{ item.name }}</mat-card-title>
+                  <mat-card-subtitle>Population : {{ item.population }}</mat-card-subtitle>
+                  <mat-card-subtitle>Region : {{ item.region }}</mat-card-subtitle>
+                  <mat-card-subtitle>Capital : {{ item.capital }}</mat-card-subtitle>
+                </mat-card-header>
+              
+             
+            </mat-card>
+            </div>
+          
+       
+   </div>
+</div>
+

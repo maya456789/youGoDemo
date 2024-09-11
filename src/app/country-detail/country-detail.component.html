@@ -1,0 +1,43 @@
+
+
+
+<div class="row gy-4 d-flex justify-content-center mt-4"  *ngFor="let item of countryDetails ">
+    <div class="col-lg-4 col-md-6" appearance="outlined" >
+    <mat-card class="example-card" >
+      
+      <img mat-card-image src={{item.flag}} alt="Photo of a Shiba Inu" height="200px">
+      <!-- <mat-card-header>
+          <mat-card-title>{{ item.name }}</mat-card-title>
+          <mat-card-subtitle>Population : {{ item.population }}</mat-card-subtitle>
+          <mat-card-subtitle>Region : {{ item.region }}</mat-card-subtitle>
+          <mat-card-subtitle>Capital : {{ item.capital }}</mat-card-subtitle>
+        </mat-card-header> -->
+      
+     
+    </mat-card>
+
+    </div>
+  
+     <div class="col-lg-4 col-md-6">
+        <h3>{{ item.name }}</h3>
+        <div class="row">
+           <div class="col-6">
+             <b>Population</b>:{{ item.population }}<br>
+             <b>Region</b>:{{ item.region }}<br>
+             <b>Capital</b>:{{ item.capital }}
+           </div>
+           <div class="col-6">
+            <b >Curriences</b>: {{ CC }} <br>
+            <b >Languages</b>: {{ lang }}
+           </div>
+           
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <b >Border countries:</b> {{ border }}
+            </div>
+           
+        </div>
+     </div>
+</div>
+
